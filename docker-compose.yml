@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack_main
+    ports:
+      - "4566:4566"  # Main LocalStack API port
+      - "4510-4559:4510-4559"  # Internal ports for local services (optional)
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # Enables LocalStack to use Docker for services
+    networks:
+      - localstack_network
+    restart: always
+
+networks:
+  localstack_network:
+    driver: bridge

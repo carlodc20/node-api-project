@@ -1,15 +1,23 @@
 {
-  "name": "nodejs",
+  "name": "my-node-app",
   "version": "1.0.0",
+  "description": "A simple Node.js API application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "pm2-start": "pm2 start index.js --name my-node-app"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^5.1.0"
-  }
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.5-lts.2",
+    "pm2": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "author": "Your Name",
+  "license": "MIT"
 }
